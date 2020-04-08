@@ -15,10 +15,10 @@ who:
     de l'esforç de moltes persones. Sabem també que en aquesta etapa de la vida
     podem fer una diferència i que tenim un paper especial que no podem deixar
     passar.
-  image: /img/coffee.png
+  image: /img/charlando-encuentro.jpg
 what: 
   title: Qué hacemos
   description: >-
     Duem a terme actes de servei comunitari, especialment dirigides a nens i adolescents, doncs són les llavors del futur i veiem en ells un gran potencial per construir una nova societat. Participem de la vida comunitaria i d'espais participatius per a la reflexió i aprenentatge amb altres agents de canvi social, i convidem a tothom a participar amb nosaltres i aprendre junts a transformar les nostres vides i els nostres barris.
-  image: /img/coffee.png
+  image: /img/servicio-abrazos.jpg
 ---

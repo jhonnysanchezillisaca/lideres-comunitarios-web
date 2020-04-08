@@ -68,32 +68,46 @@ export const IndexPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="intro content">
-                <div className="column is-12 ">
+                <div className="column is-12" style={{marginBottom: '1.2em'}}>
                   <h3 className="has-text-weight-semibold is-size-2">
                     {who.title}
                   </h3>
-                  {who.image ? (
-                    <div className="blog-list-item featured-thumbnail">
-                      <PreviewCompatibleImage
-                        className="image is-128x128"
-                        imageInfo={{
-                          image: who.image,
-                        }}
-                      />
+                  <div className="columns">
+                    <div className="column is-5">
+                      {who.image ? (
+                          <PreviewCompatibleImage
+                            imageInfo={{
+                              image: !!who.image.childImageSharp ? who.image.childImageSharp.fluid.src : image,
+                            }}
+                          /> 
+                      ) : null}
                     </div>
-                  ) : null}
-                  <p >{who.description}</p>
+                    <div className="column is-size-5">
+                      <p>{who.description}</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="intro column is-12 ">
+                <div className="column is-12 ">
                   <h3 className="has-text-weight-semibold is-size-2">
                     {what.title}
                   </h3>
-                  <p>{what.description}</p>
-                  <div className="has-text-centered">
+                  <div className="columns">
+                    <div className="column is-size-5 ">
+                      <p>{what.description}</p>
+                    </div>
+                    <div className="column is-5">
+                      {what.image ? (
+                          <PreviewCompatibleImage
+                            imageInfo={{
+                              image: !!what.image.childImageSharp ? what.image.childImageSharp.fluid.src : image,
+                            }}
+                          /> 
+                      ) : null}
+                    </div>
+                  </div>
                     <Link className="btn" to="/products">
                       Ver las actividades
                     </Link>
-                  </div>
                 </div>
                 <div className="columns">
                 </div>
@@ -176,7 +190,7 @@ export const pageQuery = graphql`
           description
           image {
             childImageSharp {
-              fluid(maxWidth: 120, quality: 100) {
+              fluid(maxWidth: 450, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -187,7 +201,7 @@ export const pageQuery = graphql`
           description
           image {
             childImageSharp {
-              fluid(maxWidth: 120, quality: 100) {
+              fluid(maxWidth: 450, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
